@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    h1.
+        Infophoto #{project._id}
+    a(href='/projects') Go back
+    p Name: #{project.name}
+    p Descirpiton: #{project.description}
+    p Price: #{project.price}
+    p Finished jobs: #{project.finished_jobs}
+    p Start date: #{project.start_date}
+    p End date: #{project.end_date}
+    h2.
+        Members
+    - each member, i in project.members
+        p Name: #{member.name}
+        p Surname: #{member.name} <br>
+    

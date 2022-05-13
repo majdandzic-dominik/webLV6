@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	a(href='/projects') Go back
+	form#formAddProject(name="addProject",method="post",action="/projects")
+		p Name: 
+			input#inputName(type="text", placeholder="ex. Project 1", name="name")
+		p Description: 
+			input#inputDescription(type="text", placeholder="ex. Proejct is made for ... and is used for ...", name="description")
+		p Price: 
+			input#inputPrice(type="number", placeholder="ex. 1322", name="price")
+		p Finished jobs: 
+			input#inputFinishedJobs(type="text", placeholder="ex. Finish planing, create design...", name="finished_jobs")
+		p Start date: 
+			input#inputStartDate(type="date", name="start_date")
+		p End date: 
+			input#inputEndDate(type="date", name="end_date")
+		p
+			button#btnSubmit(type="submit") submit

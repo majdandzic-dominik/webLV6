@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    a(href='/projects') Go back
+    form(action='/projects/#{project._id}/member',method='post',name='addMemberToProject',enctype='application/x-www-form-urlencoded')       
+        p Name: 
+            input#inputName(type="text", placeholder="ex. John", name="name")
+        p Surname: 
+            input#inputSurname(type="text", placeholder="ex. Doe", name="surname")
+        p
+            button#btnSubmit(type="submit") add

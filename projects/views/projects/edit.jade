@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	h1.
+		Project ID #{project._id}
+	a(href='/projects') Go back
+	form(action='/projects/#{project._id}/edit',method='post',name='updateProject',enctype='application/x-www-form-urlencoded')       
+		p Name: 
+			input#inputName(type="text", value='#{project.name}', name="name")
+		p Description: 
+			input#inputDescription(type="text", value='#{project.description}', name="description")
+		p Price: 
+			input#inputPrice(type="number", value='#{project.price}', name="price")
+		p Finished jobs: 
+			input#inputFinishedJobs(type="text", value='#{project.finished_jobs}', name="finished_jobs")
+		p Start date: 
+			input#inputStartDate(type="date", value='#{project.start_date}', name="start_date")
+		p End date: 
+			input#inputEndDate(type="date", value='#{project.end_date}', name="end_date")
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+	button#btnSubmit(type='submit').
+				Update
